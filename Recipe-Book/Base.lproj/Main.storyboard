@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JHQ-3E-bzg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JHQ-3E-bzg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,10 +27,10 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZmK-nZ-ypF" id="AOG-wh-7ua">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-hE-AdQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-hE-AdQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
                                                     <animations/>
                                                 </imageView>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1117" y="361"/>
         </scene>
-        <!--View Controller-->
+        <!--CreateRecipeVC-->
         <scene sceneID="CJG-iD-4iH">
             <objects>
-                <viewController id="6cz-Ex-vTI" sceneMemberID="viewController">
+                <viewController id="6cz-Ex-vTI" userLabel="CreateRecipeVC" customClass="CreateRecipeVC" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dO1-bU-of6"/>
                         <viewControllerLayoutGuide type="bottom" id="z4R-LO-ZEq"/>
@@ -149,6 +149,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addImg:" destination="6cz-Ex-vTI" eventType="touchUpInside" id="Kqn-X8-exD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXK-jY-Rau">
                                 <rect key="frame" x="252" y="483" width="97" height="30"/>
@@ -158,6 +161,9 @@
                                     <constraint firstAttribute="width" constant="97" id="gZm-WW-Z0G"/>
                                 </constraints>
                                 <state key="normal" title="Create Recipe"/>
+                                <connections>
+                                    <action selector="createRecipe:" destination="6cz-Ex-vTI" eventType="touchUpInside" id="4zb-kd-bkO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -184,6 +190,13 @@
                             <constraint firstItem="lUj-gk-ata" firstAttribute="centerX" secondItem="SUo-aw-KVv" secondAttribute="centerX" id="tb2-Xa-VsQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addImgBtn" destination="DfV-WC-Jq8" id="W1e-Qg-Pva"/>
+                        <outlet property="recipeImg" destination="lUj-gk-ata" id="g2z-TY-0IV"/>
+                        <outlet property="recipeIngredients" destination="9Ye-7k-BAx" id="aUj-5d-ctd"/>
+                        <outlet property="recipeSteps" destination="Vlg-AF-JdG" id="Mmb-YC-Ijz"/>
+                        <outlet property="recipeTitle" destination="rgU-gc-H1v" id="4iU-Zz-TUA"/>
+                    </connections>
                 </viewController>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Title" textAlignment="natural" minimumFontSize="17" id="aEY-qz-O2n">
                     <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
